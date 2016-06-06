@@ -50,87 +50,87 @@ function randomCharacterSelect(){
     switch(randomCharacter) {
 
     case 0:
-        return selectedCharacter = "Genji"
+        return "Genji"
       //  window.alert("Genji")
         break;
     case 1:
-        return selectedCharacter = "McCree"
+        return "McCree"
        // window.alert("McCree")
         break;
     case 2:
-        return selectedCharacter = "Pharah"
+        return "Pharah"
        // window.alert("Pharah")
         break;
     case 3:
-        return selectedCharacter = "Reaper"
+        return "Reaper"
        // window.alert("Reaper")
         break;
     case 4:
-        return selectedCharacter = "Soldier:76"
+        return "Soldier:76"
        // window.alert("Soldier:76")
         break;
     case 5:
-        return selectedCharacter = "Tracer"
+        return "Tracer"
        // window.alert("Tracer")
         break;
     case 6:
-        return selectedCharacter = "Bastion"
+        return "Bastion"
        // window.alert("Bastion")
         break;
     case 7:
-        return selectedCharacter = "Hanzo"
+        return "Hanzo"
       //  window.alert("Hanzo")
         break;
     case 8:
-        return selectedCharacter = "Junkrat"
+        return "Junkrat"
        // window.alert("Junkrat")
         break;
     case 9:
-        return selectedCharacter = "Mei"
+        return "Mei"
       //  window.alert("Mei")
         break;
     case 10:
-        return selectedCharacter = "Torbjorn"
+        return "Torbjorn"
        // window.alert("Torbjorn")
         break;
     case 11:
-        return selectedCharacter = "Widowmaker"
+        return "Widowmaker"
        // window.alert("Widowmaker")
         break;
     case 12:
-        return selectedCharacter = "D.Va"
+        return "D.Va"
        // window.alert("D.Va")
         break;
     case 13:
-        return selectedCharacter = "Reinhardt"
+        return "Reinhardt"
        // window.alert("Reinhardt")
         break;
     case 14:
-        return selectedCharacter = "Roadhog"
+        return "Roadhog"
         //window.alert("Roadhog")
         break;
     case 15:
-        return selectedCharacter = "Winston"
+        return "Winston"
         //window.alert("Winston")
         break;
     case 16:
-        return selectedCharacter = "Zarya"
+        return "Zarya"
         //window.alert("Zarya")
         break;
     case 17:
-        return selectedCharacter = "Lucio"
+        return "Lucio"
         //window.alert("Lucio")
         break;
     case 18:
-        return selectedCharacter = "Mercy"
+        return "Mercy"
         //window.alert("Mercy")
         break;
     case 19:
-        return selectedCharacter = "Symmetra"
+        return "Symmetra"
         //window.alert("Symmetra")
         break;
     case 20:
-        return selectedCharacter = "Zenyatta"
+        return "Zenyatta"
        // window.alert("Zenyatta")
         break;
     default:
@@ -148,13 +148,19 @@ function getCharacters(){
     var n = playerNumber
         for(i = 0; i < n; i++){
             console.log(i);
-            randomCharacterSelect();
-
-            players[i] = selectedCharacter;
-            console.log(players[i])
+            
+			players[i] = randomCharacterSelect();
+            
+			console.log(players[i])
         }
-    window.location = "/results.html";
-    document.getElementById("results").innerHTML = "Player 1 = " +players[0] +"<br>"+ " Player 2 = "+players[1]
+    //window.location = "/results.html";
+	
+	var OutputHTML = "Player 1 = " + players[0];
+	for (i=1; i < playerNumber; i++)
+	{
+		OutputHTML = OutputHTML + "<br>"+ " Player " + (i+1) + " = " + players[i];
+	}
+    document.getElementById("results").innerHTML = OutputHTML;
     
     }
     
