@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <title>Overwatch Roulette</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div onclick="closePopup()" id="fade">
+        </div>
+        <div id="popup">
+        <p>There are <select id="playerdrop">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            </select> players </p>
+            
+            <div onclick="getCharacters()" class="button">GO</div>
+            <p id="results">Good luck!</p>
+            <div onclick="closePopup()" class="button">CLOSE</div>
+        </div>
+        
+        <div class="row navBar">
+            <div class="col-xs-12">
+                <h1 class="title">OVERWATCH<span class="highlight"> STRAT ROULETTE</span> </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 mainHeader">
+            <h1> OVERWATCH ROULETTE</h1>
+                <H2>ONLY THE BEST STRATS</H2>
+                <p class="infoText">Overwatch Roulette is the first random strat and character generator for solo play or teams click here to get started!</p>
+        
+            </div>
+        </div>
+        <div class="row stratrow">
+        <div class="col-xs-12">
+        <h1>Get a strat now!</h1>
+            <div class="button" onclick="soloStrat()">START
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <h1>Mobile app</h1>
+                <h2>Coming soon</h2>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <h1>Submit a strat</h1>
+                <h2>Coming soon</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-12 col-sm-6">
+                Footer part one.
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                Footer part two.
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+</body>
+
+</html>

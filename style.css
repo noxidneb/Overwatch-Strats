@@ -1,0 +1,100 @@
+html{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0edf2
+}
+#fade {
+    position:fixed;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 999998;
+    background-color: rgba(0,0,0,0.76);
+    padding: 0px !important;
+    margin: 0px !important;
+    display: none;
+    opacity: 0;
+    transition: 0.5s;
+    
+}
+
+#popup{
+    padding: 50px;
+    width: 60%;
+    height: 600px;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.45);
+    background-color: #242e44;
+    color: white;
+    display: none;
+    z-index: 999999;
+    position: absolute;
+    left: 20%;
+    margin-right: 20%;
+    top: 20%;
+    text-align: center;
+    font-size: 1.5em
+ 
+}
+
+.navBar{
+    height: 80px;
+    line-height: 10px;
+    vertical-align: middle;
+    background-color: #242e44;
+    color: white;
+}
+
+.navBar span.highlight {
+color: #f7931e !important;
+}
+
+.stratrow{
+    color: white;
+    background-color: #242e44;
+    text-align: center;
+    text-transform:uppercase;
+    letter-spacing: 3px;
+    padding: 50px;
+}
+
+.button{
+    background-color: #F7931e;
+    padding: 25px;
+    margin-left:auto;
+    margin-right: auto;
+    width: auto;
+    color: white;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 25px;   
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.button:hover{
+  box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.45);
+    transition: 0.3s;
+}
+
+.mainHeader {
+    background-image: url(images/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    text-align: center;
+}
+
+.infoText{
+    color: white;
+    background-color: #f7931e;
+    font-size: 20px;
+    padding: 10px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+    line-height: 30px;
+    text-transform: capitalize;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.45);
+}
