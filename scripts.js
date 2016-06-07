@@ -172,7 +172,7 @@ function getCharacters(){
 function getHeroImage(){
     console.log("running get image");
     console.log(playerNumber);
-    console.log(players)
+    console.log(players);
     for(i = 0; i < playerNumber; i++){
         var imageSrc = '<img src"/images/'+players[i]+'.png"';
         document.getElementById("player"+i+"img").innerHTML = imageSrc;
