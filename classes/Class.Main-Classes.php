@@ -13,6 +13,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/overwatchstrats/classes/Class.MySQL.php
 require_once($_SERVER['DOCUMENT_ROOT'].'/overwatchstrats/classes/Class.Joe.php');
 
 //Include Repositories 
+require_once($_SERVER['DOCUMENT_ROOT'].'/overwatchstrats/repositories/Gamemodes.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/overwatchstrats/repositories/Heroes.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/overwatchstrats/repositories/Maps.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/overwatchstrats/repositories/Strats.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/overwatchstrats/repositories/Teams.php');
 
 ?>

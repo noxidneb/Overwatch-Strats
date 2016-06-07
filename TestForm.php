@@ -3,20 +3,57 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/overwatchstrats/classes/Class.Main.php');
 ?>
 </head>
-<form>
-<?php
-	$DIMaps = new DIMaps();
-	echo 'Map: ';
-	echo '<select id=ddlMap name=ddlMap>';
-		echo '<option value="ANY">Any</option>';
+
+<script>
+
+$( document ).ready(function() {
+	PopulateSearch("ANY", "ANY", "ANY");
+});
+
+function FilterSearch()
+{
+	var Map = document.getElementById("ddlMap").value;
+	var Gamemode = document.getElementById("ddlGamemode").value;
+	var Team = document.getElementById("ddlTeam").value;
+	
+	PopulateSearch(Map, Gamemode, Team);	
+}
+
+function PopulateSearch(Map, Gamemode, Team)
+{
+	$.ajax({ url: 'ajax/SearchCriteria.php',
+         data: "Map="+Map+"&Gamemode="+Gamemode+"&Team="+Team,
+         type: 'POST',
+	 dataType: "HTML",
+	 success: function(response) 
+	 { 
+		$("#SearchCriteria").html(response); 
 		
-		$AllMaps = $DIMaps->GetAllMaps();
-		foreach ($AllMaps as $Map)
-		{
-			echo '<option value="'.$Map->GetMapID().'">'.$Map->GetMapName().'</option>';
-		}
-	echo '</select>';
-	echo '<br><br>';
-?>
-<input type="submit" value="Find a strat" />
-<form>
+	 }
+	});			
+}
+
+function SearchForStrats ()
+{
+	var Map = document.getElementById("ddlMap").value;
+	var Gamemode = document.getElementById("ddlGamemode").value;
+	var Team = document.getElementById("ddlTeam").value;
+	
+	$.ajax({ url: 'ajax/SearchResults.php',
+         data: "Map="+Map+"&Gamemode="+Gamemode+"&Team="+Team,
+         type: 'POST',
+	 dataType: "HTML",
+	 success: function(response) 
+	 { 
+		$("#SearchResults").html(response); 
+	 }
+	});			
+}
+</script>
+<center>
+<div id="SearchForm">
+<div id="SearchCriteria"><!-- This is populated via the Ajax --></div>
+<button onclick="SearchForStrats()">Find a strat</button>
+</div>
+<div id="SearchResults"><!-- This is populated via the Ajax --></div>
+</center>
