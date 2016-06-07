@@ -28,11 +28,13 @@ var result6 = "none";
 var playerNumber = 0;
 var selectedCharacter = "";
 var players = new Array("player1", "player2", "player3","player4","player5","player6");
+var playerImages = new Array ("/images/genji","/images/genji","/images/genji","/images/genji","/images/genji","/images/genji");
 
 function soloStrat(){
     document.getElementById("fade").style.opacity = "1";
     document.getElementById("popup").style.display = "block";
     document.getElementById("fade").style.display = "block";
+    window.scrollTo(0,0);
     
 }
 
@@ -152,15 +154,29 @@ function getCharacters(){
 			players[i] = randomCharacterSelect();
             
 			console.log(players[i])
+            if(i = playerNumber){
+                setTimeout(function(){window.location = "results.html";}, 1000);
+             
+            }
         }
-    //window.location = "/results.html";
-	
-	var OutputHTML = "Player 1 = " + players[0];
+   
+	/*var OutputHTML = "Player 1 = " + players[0];
 	for (i=1; i < playerNumber; i++)
 	{
 		OutputHTML = OutputHTML + "<br>"+ " Player " + (i+1) + " = " + players[i];
 	}
-    document.getElementById("results").innerHTML = OutputHTML;
+    document.getElementById("results").innerHTML = OutputHTML;*/
     
     }
+// FUNCTION FOR SETTING THE RESULTS IMAGES ON RESULTS.HTML
+function getHeroImage(){
+    console.log("running get image");
+    console.log(playerNumber);
+    console.log(players)
+    for(i = 0; i < playerNumber; i++){
+        var imageSrc = '<img src"/images/'+players[i]+'.png"';
+        document.getElementById("player"+i+"img").innerHTML = imageSrc;
+        console.log(imageSrc);    
+    }
+}
     
