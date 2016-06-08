@@ -149,15 +149,22 @@ function getCharacters(){
     var playerNumber = e.options[e.selectedIndex].value;
     var n = playerNumber
         for(i = 0; i < n; i++){
-            console.log(i);
+
             
 			players[i] = randomCharacterSelect();
+            console.log("trying to set cookie")
+            setCookie();
+            function setCookie() {
+                console.log("setting cookie");
+                var d = new Date();
+                d.setTime(d.getTime() + (10*24*60*60*1000));
+                var expires = "expires="+d.toUTCString();
+                document.cookie = "char" + i + "=" + players[i] + "; " + expires;
+                console.log(expires);
+                console.log(i)
+           }
             
 			console.log(players[i])
-            if(i = playerNumber){
-                setTimeout(function(){window.location = "results.html";}, 1000);
-             
-            }
         }
    
 	/*var OutputHTML = "Player 1 = " + players[0];
